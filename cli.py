@@ -131,8 +131,10 @@ def show_results(smart_list):
             print(f"  • {item}: {quantity} × ${price:.2f} = ${subtotal:.2f}")
         
         # Calculate savings
-        all_totals = [data['total'] for data in comparison.values() 
-                     if data['total'] != float('inf')]
+        all_totals = [
+            data['total'] for data in comparison.values()
+            if data['total'] != float('inf')
+        ]
         if len(all_totals) > 1:
             max_cost = max(all_totals)
             savings = max_cost - total
